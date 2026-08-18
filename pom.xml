@@ -11,6 +11,7 @@
   - Added Minecraft 1.21.11 and 26.2 modules
   - Added the Bukkit inventory GUI and bumped the release to 0.4.2
   - Fixed spawning fake players being kicked by PacketEvents and bumped the release to 0.4.3
+  - Fixed OpenInv inventory container desynchronization and bumped the release to 0.4.4
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -87,7 +88,7 @@
         <java.version>21</java.version>
         <maven.compiler.proc>full</maven.compiler.proc>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>0.4.3</revision>
+        <revision>0.4.4</revision>
 
         <detools.version>0.1.7-SNAPSHOT</detools.version>
     </properties>

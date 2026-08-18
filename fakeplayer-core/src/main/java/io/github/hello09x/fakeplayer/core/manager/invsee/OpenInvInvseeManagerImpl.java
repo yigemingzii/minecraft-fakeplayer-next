@@ -1,3 +1,7 @@
+/**
+ * Modified by yigemingzii, August 2026 for OpenInv compatibility.
+ */
+
 package io.github.hello09x.fakeplayer.core.manager.invsee;
 
 import com.google.common.base.Throwables;
@@ -34,5 +38,11 @@ public class OpenInvInvseeManagerImpl extends AbstractInvseeManager {
             log.warning("Failed to %s's open inventory for %s\n%s".formatted(whom.getName(), viewer.getName(), Throwables.getStackTraceAsString(e)));
             return null;
         }
+    }
+
+    @Override
+    protected void updateInventoryTitle(@NotNull InventoryView view, @NotNull Player whom, @NotNull Player viewer) {
+        // OpenInv supplies the title while opening its specialized container.
+        // Calling InventoryView#setTitle here can desynchronize its slot layout.
     }
 }
