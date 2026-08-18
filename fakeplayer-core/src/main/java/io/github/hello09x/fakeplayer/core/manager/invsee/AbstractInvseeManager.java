@@ -1,3 +1,7 @@
+/**
+ * Modified by yigemingzii, August 2026 for OpenInv compatibility.
+ */
+
 package io.github.hello09x.fakeplayer.core.manager.invsee;
 
 import io.github.hello09x.devtools.core.utils.ComponentUtils;
@@ -51,11 +55,22 @@ public abstract class AbstractInvseeManager implements InvseeManager {
                 SoundCategory.BLOCKS,
                 0.3F, 1.0F
         );
+        this.updateInventoryTitle(view, whom, viewer);
+        return true;
+    }
+
+    /**
+     * Updates the title after the inventory is opened.
+     *
+     * OpenInv creates a specialized container and owns its packet layout. Its
+     * inventory view must therefore keep the title and container state it
+     * created instead of being reopened through Bukkit's generic title update.
+     */
+    protected void updateInventoryTitle(@NotNull InventoryView view, @NotNull Player whom, @NotNull Player viewer) {
         view.setTitle(ComponentUtils.toString(translatable(
                 "fakeplayer.manager.inventory.title",
                 text(whom.getName())
         ), viewer.locale()));
-        return true;
     }
 
     protected abstract @Nullable InventoryView openInventory(@NotNull Player viewer, @NotNull Player whom);
