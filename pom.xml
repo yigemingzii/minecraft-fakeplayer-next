@@ -13,7 +13,7 @@
   - Added the Bukkit inventory GUI and bumped the release to 0.4.2
   - Fixed spawning fake players being kicked by PacketEvents and bumped the release to 0.4.3
   - Fixed OpenInv inventory container desynchronization and bumped the release to 0.4.4
-  - Bumped the release to 1.4.5
+  - Bumped the release to 0.4.5
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -91,7 +91,7 @@
         <java.version>21</java.version>
         <maven.compiler.proc>full</maven.compiler.proc>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>1.4.5</revision>
+        <revision>0.4.5</revision>
 
         <detools.version>0.1.7-SNAPSHOT</detools.version>
     </properties>
