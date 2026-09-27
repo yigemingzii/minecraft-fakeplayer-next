@@ -3,12 +3,13 @@
   Modified by yigemingzii, August 2026
   - Added module fakeplayer-v26_1_2
   - Updated Lombok 1.18.34 -> 1.18.46
-  - Updated CommandAPI 11.0.0 -> 11.2.0 for Minecraft 26.1 support
+  - Updated CommandAPI 11.0.0 -> 12.1.0 for Minecraft 26.3 support
   - Enabled annotation processing for JDK 25 builds
   - Flattened CI-friendly versions in installed Maven POMs
   - Added licensing, contributor, and source repository metadata
   - Updated project identity and repository URL after leaving the fork network
   - Added Minecraft 1.21.11 and 26.2 modules
+  - Added Minecraft 26.3 module
   - Added the Bukkit inventory GUI and bumped the release to 0.4.2
   - Fixed spawning fake players being kicked by PacketEvents and bumped the release to 0.4.3
   - Fixed OpenInv inventory container desynchronization and bumped the release to 0.4.4
@@ -82,6 +83,7 @@
         <module>fakeplayer-v1_21_11</module>
         <module>fakeplayer-v26_1_2</module>
         <module>fakeplayer-v26_2</module>
+        <module>fakeplayer-v26_3</module>
     </modules>
 
     <properties>
@@ -160,7 +162,7 @@
             <dependency>
                 <groupId>dev.jorel</groupId>
                 <artifactId>commandapi-paper-core</artifactId>
-                <version>11.2.0</version>
+                <version>12.1.0</version>
                 <scope>provided</scope>
             </dependency>
 

@@ -19,7 +19,7 @@
 
 - **No Maven wrapper** — `mvn` must be installed separately
 - **Build the final jar**: `mvn package -pl fakeplayer-dist`
-- **Compile a single NMS module**: `mvn compile -pl fakeplayer-v26_2 -am`
+- **Compile a single NMS module**: `mvn compile -pl fakeplayer-v26_3 -am`
 - **No tests** exist in the project
 
 ## Architecture

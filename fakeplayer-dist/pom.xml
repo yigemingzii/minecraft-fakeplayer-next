@@ -5,6 +5,7 @@
   - Declared shaded runtime dependencies directly
   - Included project license and attribution files in the distribution jar
   - Added Minecraft 1.21.11 and 26.2 dependencies and copy targets
+  - Added Minecraft 26.3 dependency and copy target
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -163,6 +164,11 @@
             <artifactId>fakeplayer-v26_2</artifactId>
             <version>${revision}</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.hello09x.fakeplayer</groupId>
+            <artifactId>fakeplayer-v26_3</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -292,6 +298,11 @@
                                     </fileset>
                                 </copy>
                                 <copy tofile="../server-26.2/plugins/fakeplayer.jar">
+                                    <fileset dir="${project.build.directory}">
+                                        <include name="fakeplayer-${revision}.jar"/>
+                                    </fileset>
+                                </copy>
+                                <copy tofile="../server-26.3/plugins/fakeplayer.jar">
                                     <fileset dir="${project.build.directory}">
                                         <include name="fakeplayer-${revision}.jar"/>
                                     </fileset>
