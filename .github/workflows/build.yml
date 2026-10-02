@@ -11,6 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+# Modified by yigemingzii, September 2026 - build and verify the Minecraft 26.3 module.
 name: Build
 
 on:
@@ -23,7 +24,7 @@ on:
   workflow_dispatch:
 
 env:
-  REVISION: 0.4.4
+  REVISION: 0.4.5
 
 jobs:
   build:
@@ -115,7 +116,7 @@ jobs:
 
       - name: Prepare dependencies
         run: |
-          mkdir -p lib versions/26.1.2 versions/26.2
+          mkdir -p lib versions/26.1.2 versions/26.2 versions/26.3
           if [ ! -f versions/26.1.2/paper-26.1.2.jar ]; then
             curl -sL -o lib/paper-26.1.2-server.jar \
               "https://fill-data.papermc.io/v1/objects/1d70b1dab9cf4a6de615209a536f3a45a2186240253c428213ce2188ab95e5f7/paper-26.1.2-74.jar"
@@ -126,6 +127,13 @@ jobs:
               "https://fill-data.papermc.io/v1/objects/825963b3c22103c7501382d5d365b960a830e3f9c79d9aa2b06f32ad1a98659f/paper-26.2-68.jar"
             $JDK25_HOME/bin/java -jar lib/paper-26.2-server.jar --help || true
           fi
+          if [ ! -f versions/26.3/paper-26.3.jar ]; then
+            curl -fSL -o lib/paper-26.3-server.jar \
+              "https://fill-data.papermc.io/v1/objects/2b77166ee61886a9bc9ab33dc9e4847fa3538b36d9ba6e5f2fa7ed90973aa748/paper-26.3-41.jar"
+            echo "2b77166ee61886a9bc9ab33dc9e4847fa3538b36d9ba6e5f2fa7ed90973aa748  lib/paper-26.3-server.jar" | sha256sum -c -
+            $JDK25_HOME/bin/java -jar lib/paper-26.3-server.jar --help
+          fi
+          test -f versions/26.3/paper-26.3.jar
           test -f versions/26.1.2/paper-26.1.2.jar
           test -f versions/26.2/paper-26.2.jar
           [ -f lib/OpenInv.jar ] || curl -sL -o lib/OpenInv.jar \
@@ -144,7 +152,7 @@ jobs:
       - name: Install 26.x modules (JDK 25)
         run: |
           export JAVA_HOME=$JDK25_HOME
-          mvn install -pl fakeplayer-v26_1_2,fakeplayer-v26_2 -Drevision=${{ env.REVISION }} -DskipTests --no-transfer-progress
+          mvn install -pl fakeplayer-v26_1_2,fakeplayer-v26_2,fakeplayer-v26_3 -Drevision=${{ env.REVISION }} -DskipTests --no-transfer-progress
 
       - name: Package final jar (shade)
         run: |
@@ -164,6 +172,7 @@ jobs:
             io/github/hello09x/fakeplayer/v1_21_11/spi/NMSBridgeImpl.class \
             io/github/hello09x/fakeplayer/v26_1_2/spi/NMSBridgeImpl.class \
             io/github/hello09x/fakeplayer/v26_2/spi/NMSBridgeImpl.class \
+            io/github/hello09x/fakeplayer/v26_3/spi/NMSBridgeImpl.class \
             message/message.properties \
             message/message_zh.properties \
             META-INF/LICENSE.txt \

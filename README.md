@@ -2,10 +2,11 @@
   Modified by yigemingzii, August 2026
   - Added original-project attribution linking to tanyaofei/minecraft-fakeplayer
   - Updated supported versions to include 1.21.11 and 26.2
-  - Documented the CommandAPI 11.2.0 requirement for Minecraft 26.1.x
+  - Updated CommandAPI to 12.1.0 for Minecraft 26.3 support
   - Clarified licensing and attribution
   - Documented the fake player inventory GUI
   - Documented PacketEvents spawn-kick protection
+  - Added experimental Minecraft 26.3 support
 -->
 # Minecraft FakePlayer Next
 
@@ -17,7 +18,7 @@ English | [简体中文](README_zh.md)
 
 This is a server side plugin inspired by [Carpet-Mod](https://github.com/gnembon/fabric-carpet) for Minecraft `1.20.x`, `1.21.x` and `26.x`.
 
-Recent supported releases include Minecraft `1.21.10`, `1.21.11`, `26.1.2`, and `26.2`. Paper 26.2 support currently targets build 68 Beta.
+Recent supported releases include Minecraft `1.21.10`, `1.21.11`, `26.1.2`, and `26.2`. Paper 26.2 support currently targets build 68 Beta. Minecraft `26.3` support targets Paper build 41 Alpha.
 
 [Click me](https://youtu.be/NePaDz-P5nI) to visit a demo video.
 
@@ -33,7 +34,7 @@ Recent supported releases include Minecraft `1.21.10`, `1.21.11`, `26.1.2`, and 
 ## Requirements
 
 + [Paper](https://papermc.io) or [Purpur](http://purpurmc.org) software
-+ [CommandAPI](https://commandapi.jorel.dev) Plugin (`11.2.0` is required on Minecraft `26.1.x`)
++ [CommandAPI](https://commandapi.jorel.dev) Plugin (`12.1.0` is required for Minecraft `26.3`)
 + Java 21 or newer (Minecraft `26.x` requires Java 25)
 
 ## Config file

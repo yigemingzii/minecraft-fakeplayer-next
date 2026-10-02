@@ -2,10 +2,11 @@
   Modified by yigemingzii, August 2026
   - Added original-project attribution linking to tanyaofei/minecraft-fakeplayer
   - Updated supported versions (1.21.11 and 26.2)
-  - Documented the CommandAPI 11.2.0 requirement for Minecraft 26.1.x
+  - Updated CommandAPI to 12.1.0 for Minecraft 26.3 support
   - Clarified licensing and attribution
   - Documented the fake player inventory GUI
   - Documented PacketEvents spawn-kick protection
+  - Added experimental Minecraft 26.3 support
 -->
 # Minecraft FakePlayer Next - 假人插件
 
@@ -24,6 +25,7 @@
 + 支持 `1.20`, `1.20.2`, `1.20.3`, `1.20.4`, `1.20.5`, `1.20.6`
 + 支持 `1.21`, `1.21.1`, `1.21.3`, `1.21.4`, `1.21.5`, `1.21.6`, `1.21.7`, `1.21.8`, `1.21.9`, `1.21.10`, `1.21.11`
 + 支持 `26.1.2`, `26.2`（26.2 当前基于 Paper build 68 Beta）
++ 支持 `26.3`（基于 Paper build 41 Alpha，需要 CommandAPI `12.1.0`）
 
 ## 特性
 
@@ -36,7 +38,7 @@
 
 ## 前置插件:
 
-- [CommandAPI](https://commandapi.jorel.dev)（Minecraft `26.1.x` 必须使用 `11.2.0`）
+- [CommandAPI](https://commandapi.jorel.dev)（Minecraft `26.3` 必须使用 `12.1.0`）
 
 ## 配置文件
 
